@@ -26,9 +26,7 @@ public class Fruit : MonoBehaviour {
     /// <param name="dam">ÉËº¦</param>
     /// <returns>ÊÇ·ñËÀÍö</returns>
     public virtual bool get_damage(float dam) {
-        if(dam > 1000) {
-            Debug.Log(dam);
-        }
+
         health -= dam;
         if (health < 0) {
             be_destroy();

@@ -11,8 +11,8 @@ public class UIController : MonoBehaviour {
         instance = this;
     }
 
-    public Image health_bar, breath_bar;
-    public Image health_late_bar, breath_late_bar;
+    public Image health_bar, health_lim_bar, health_late_bar;
+    public Image breath_bar, breath_lim_bar, breath_late_bar;
     public Image harvest_hint;
     public Text total_txt, round_txt, required_txt;
     public GameObject escpage, deathpage, endpage;
@@ -46,8 +46,19 @@ public class UIController : MonoBehaviour {
     /// <param name="req"></param>
     public void update_counter_text(int tot, int round, int req) {
         total_txt.text = tot.ToString();
-        round_txt.text = "第 <color=#ffff00>" + round.ToString() + "</color> 轮";
-        required_txt.text = "距下次Harvest <color=#ffff00>" + req.ToString() + "</color>";
+        round_txt.text = "Round <color=#ffff00>" + round.ToString() + "</color>";
+        required_txt.text = "Required <color=#ffff00>" + req.ToString() + "</color>";
+    }
+
+
+    /// <summary>
+    /// 更新health和breath显示
+    /// </summary>
+    public void update_hp_bp(float hp, float m_hp, float bp, float m_bp) {
+        health_lim_bar.transform.localScale = new Vector3(m_hp / 100, 1, 1);
+        breath_lim_bar.transform.localScale = new Vector3(m_bp / 100, 1, 1);
+        health_bar.transform.localScale = new Vector3(hp / m_hp, 1, 1);
+        breath_bar.transform.localScale = new Vector3(bp / m_bp, 1, 1);
     }
 
     public Sprite[] levelimg = new Sprite[6];
@@ -89,14 +100,12 @@ public class UIController : MonoBehaviour {
     }
 
     void Update() {
-        health_bar.transform.localScale = new Vector3(Global.instance.player.get_health_percent(), 1, 1);
-        breath_bar.transform.localScale = new Vector3(Global.instance.player.get_breath_percent(), 1, 1);
 
         var dt = health_bar.transform.localScale - health_late_bar.transform.localScale;
         health_late_bar.transform.localScale += dt * 0.1f;
-
         dt = breath_bar.transform.localScale - breath_late_bar.transform.localScale;
         breath_late_bar.transform.localScale += dt * 0.1f;
+
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if(Time.timeScale < 0.1f) {
                 start();

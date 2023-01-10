@@ -76,6 +76,10 @@ public class Buff : MonoBehaviour {
         if (name == "Faster breath") {
             Global.instance.player.breath_cd *= 0.8f;
         }
+        if (name == "Health") {
+            Global.instance.player.max_health += 25;
+            Global.instance.player.modify_health(99999);
+        }
         if (name == "Sharp") {
             Global.instance.player.attack_rate += 25;
         }
@@ -84,15 +88,17 @@ public class Buff : MonoBehaviour {
         }
         if (name == "Deep breath") {
             Global.instance.player.max_breath += 30;
+            Global.instance.player.modify_breath(30);
             Global.instance.player.max_power += 20;
         }
 
         if (name == "Hold breath") {
-            Global.instance.player.recover_health += 2;
+            Global.instance.player.recover_health += 1;
             Global.instance.player.attack_rate += 70;
         }
         if (name == "Blood") {
-            Global.instance.player.extrude_cost += 2;
+            Global.instance.player.max_health -= 15;
+            Global.instance.player.modify_health(0);
             Global.instance.player.attack_rate += 50;
         }
         if (name == "Big body") {

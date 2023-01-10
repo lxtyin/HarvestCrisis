@@ -701,7 +701,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7B2C <color=#ffff00>1</color> \u8F6E"
+  m_Text: Round <color=#ffff00>1</color>
 --- !u!222 &435506206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1673,8 +1673,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health_bar: {fileID: 2035673536}
-  breath_bar: {fileID: 469464164}
+  health_lim_bar: {fileID: 1469843308}
   health_late_bar: {fileID: 1204322048}
+  breath_bar: {fileID: 469464164}
+  breath_lim_bar: {fileID: 2000158337}
   breath_late_bar: {fileID: 572073613}
   harvest_hint: {fileID: 375291808}
   total_txt: {fileID: 1550926264}
@@ -2120,7 +2122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8DDD\u4E0B\u6B21Harvest <color=#ffff00>200</color>"
+  m_Text: Required <color=#ffff00>200</color>
 --- !u!222 &1001525808
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3543,7 +3545,7 @@ MonoBehaviour:
     - g: {fileID: 2557044491220872197, guid: c6d73df89b880594ca5842066b3f1053, type: 3}
       v: 200
     - g: {fileID: 2950409462781880600, guid: 7e74ce0512ed88c41aca42c34a060bb8, type: 3}
-      v: 10
+      v: 7
     - g: {fileID: 5884092106874781831, guid: 72cbee59264caef4d847ff38e1fa389d, type: 3}
       v: 2
   - next_lim: 500
@@ -3553,7 +3555,7 @@ MonoBehaviour:
     - g: {fileID: 8461714164596973945, guid: 014f0da62c667cf4bb00bdbcd2040566, type: 3}
       v: 2
     - g: {fileID: 5884092106874781831, guid: 72cbee59264caef4d847ff38e1fa389d, type: 3}
-      v: 2
+      v: 3
     - g: {fileID: 4080794263047587290, guid: 3a8c0decc6f03154fb6a070dc46c6f4a, type: 3}
       v: 10
   - next_lim: 600
@@ -3565,9 +3567,9 @@ MonoBehaviour:
     - g: {fileID: 5932536702558002689, guid: 61f1d743f6cfef7489c34404c46493f4, type: 3}
       v: 10
     - g: {fileID: 5884092106874781831, guid: 72cbee59264caef4d847ff38e1fa389d, type: 3}
-      v: 2
+      v: 3
     - g: {fileID: 2950409462781880600, guid: 7e74ce0512ed88c41aca42c34a060bb8, type: 3}
-      v: 30
+      v: 15
     - g: {fileID: 2570161550554715232, guid: 9c4e0ae7ce7fec54ca80e70783c4dce9, type: 3}
       v: 1
   - next_lim: 800
@@ -3579,7 +3581,7 @@ MonoBehaviour:
     - g: {fileID: 8955288221353189353, guid: 3f465e147b8f9274e8a79a21500dafe5, type: 3}
       v: 1
     - g: {fileID: 4080794263047587290, guid: 3a8c0decc6f03154fb6a070dc46c6f4a, type: 3}
-      v: 30
+      v: 25
     - g: {fileID: 5884092106874781831, guid: 72cbee59264caef4d847ff38e1fa389d, type: 3}
       v: 3
     - g: {fileID: 8461714164596973945, guid: 014f0da62c667cf4bb00bdbcd2040566, type: 3}
@@ -3591,13 +3593,15 @@ MonoBehaviour:
     - g: {fileID: 2557044491220872197, guid: c6d73df89b880594ca5842066b3f1053, type: 3}
       v: 300
     - g: {fileID: 2950409462781880600, guid: 7e74ce0512ed88c41aca42c34a060bb8, type: 3}
-      v: 60
+      v: 40
     - g: {fileID: 3761252902038769691, guid: 968e815953c1e1643a9db24d8ddbb646, type: 3}
       v: 1
     - g: {fileID: 8461714164596973945, guid: 014f0da62c667cf4bb00bdbcd2040566, type: 3}
-      v: 5
+      v: 3
     - g: {fileID: 5884092106874781831, guid: 72cbee59264caef4d847ff38e1fa389d, type: 3}
       v: 3
+    - g: {fileID: 5932536702558002689, guid: 61f1d743f6cfef7489c34404c46493f4, type: 3}
+      v: 5
   - next_lim: 800
     ls:
     - g: {fileID: 5932536702558002689, guid: 61f1d743f6cfef7489c34404c46493f4, type: 3}
@@ -3617,7 +3621,7 @@ MonoBehaviour:
     - g: {fileID: 3188818878266838967, guid: d707c7fcedb490340b35493fb0c9cf97, type: 3}
       v: 300
     - g: {fileID: 2950409462781880600, guid: 7e74ce0512ed88c41aca42c34a060bb8, type: 3}
-      v: 40
+      v: 20
     - g: {fileID: 3761252902038769691, guid: 968e815953c1e1643a9db24d8ddbb646, type: 3}
       v: 1
     - g: {fileID: 5932536702558002689, guid: 61f1d743f6cfef7489c34404c46493f4, type: 3}
@@ -3647,7 +3651,7 @@ MonoBehaviour:
     - g: {fileID: 3188818878266838967, guid: d707c7fcedb490340b35493fb0c9cf97, type: 3}
       v: 600
     - g: {fileID: 2950409462781880600, guid: 7e74ce0512ed88c41aca42c34a060bb8, type: 3}
-      v: 80
+      v: 40
     - g: {fileID: 3761252902038769691, guid: 968e815953c1e1643a9db24d8ddbb646, type: 3}
       v: 2
     - g: {fileID: 5932536702558002689, guid: 61f1d743f6cfef7489c34404c46493f4, type: 3}
@@ -3687,51 +3691,65 @@ MonoBehaviour:
   bufflist:
   - name: Faster gather
     img: {fileID: 21300000, guid: 956789af7083dc2448770b3421ebf3de, type: 3}
-    introduce: "\u84C4\u529B\u52A0\u901F"
+    introduce: Accumulate faster
     max_level: 3
   - name: Faster breath
     img: {fileID: 21300000, guid: 0e0755e3cb2ac19448a8ac456edcac8d, type: 3}
-    introduce: "\u547C\u5438\u8017\u65F6\u51CF\u5C0F"
+    introduce: Breathe faster
     max_level: 3
+  - name: Health
+    img: {fileID: 21300000, guid: 3474625e3707c3342a1dd9876f56d877, type: 3}
+    introduce: HP up
+    max_level: 5
   - name: Repel
     img: {fileID: 21300000, guid: 17b26554fb6368547aebb04a5d332e90, type: 3}
-    introduce: "\u65CB\u8F6C\u65F6\uFF0C\u51FB\u9000\u5468\u56F4\u7684\u7269\u4F53\u5E76\u9020\u6210\u4F24\u5BB3\n"
+    introduce: Knock back surrounding objects while spinning
     max_level: 5
   - name: Sharp
     img: {fileID: 21300000, guid: 02c39e10d75ca35498233ccdd64ef30a, type: 3}
-    introduce: "\u7834\u574F\u529B\u63D0\u5347"
+    introduce: Sharper
     max_level: 10000
   - name: Heavy
     img: {fileID: 21300000, guid: 0b426a80476c2f548905efe497f154a7, type: 3}
-    introduce: "\u91CD\u91CF\u63D0\u5347"
+    introduce: Heavier
     max_level: 3
   - name: Deep breath
     img: {fileID: 21300000, guid: 97e1cb38099a07f4280d30eeeb97d056, type: 3}
-    introduce: "\u84C4\u529B\u4E0A\u9650\u548C\u6C14\u606F\u4E0A\u9650\u63D0\u5347"
+    introduce: Increase the upper limit of power and breath
     max_level: 3
   - name: Hold breath
     img: {fileID: 21300000, guid: 0d7f2e2a8573dd74ead9314868992f4b, type: 3}
-    introduce: "\u751F\u547D\u56DE\u590D\u63D0\u5347\n\u7834\u574F\u529B\u63D0\u5347\n<color=#ff0000>\u4F46\u4E0D\u518D\u547C\u5438</color>"
+    introduce: 'Recover more
+
+      Much more Sharper
+
+      <color=#ff0000>Never
+      breathe</color>'
     max_level: 1
   - name: Blood
     img: {fileID: 21300000, guid: 697eb0d2bb2764747bcfd2ea9ed5324a, type: 3}
-    introduce: "<color=#ff0000>\u53D7\u5230\u7684\u4F24\u5BB3\u589E\u52A0</color>\n\u7834\u574F\u529B\u5927\u5E45\u63D0\u5347"
+    introduce: '<color=#ff0000>HP down</color>
+
+      Much more Sharper'
     max_level: 3
   - name: Big body
     img: {fileID: 21300000, guid: 11fcc6d8c464d3f4290b063e17d97c1d, type: 3}
-    introduce: "\u53D8\u5927\uFF01"
+    introduce: Big !
     max_level: 3
   - name: Small body
     img: {fileID: 21300000, guid: 947cdd29cfb13554a817a24a573c4477, type: 3}
-    introduce: "\u53D8\u5C0F\uFF01"
+    introduce: Small !
     max_level: 3
   - name: Thorn
     img: {fileID: 21300000, guid: 4e4a5559557750245af8afc1d2acd68b, type: 3}
-    introduce: "\u8737\u7F29\u65F6\u53D1\u5C04\u5C16\u523A"
+    introduce: Throw thorn while spinning
     max_level: 5
   - name: Over breath
     img: {fileID: 21300000, guid: 989ed4542ece6e44d969c3338aeb11f8, type: 3}
-    introduce: "\u84C4\u529B\u4E0A\u9650\u5927\u5E45\u63D0\u9AD8\n<color=#ff0000>\u81EA\u52A8\u6D88\u8017\u6C14\u606F\u52A0\u901F\u84C4\u529B</color>"
+    introduce: 'Increase the upper limit of breath
+
+      <color=#ff0000>Consume
+      breath to get power</color>'
     max_level: 3
 --- !u!1 &1951809586
 GameObject:
@@ -3992,9 +4010,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120, y: -60}
+  m_AnchoredPosition: {x: 20, y: -60}
   m_SizeDelta: {x: 200, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2000158337
 MonoBehaviour:
   m_ObjectHideFlags: 0

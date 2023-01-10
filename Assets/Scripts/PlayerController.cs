@@ -41,13 +41,6 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("extrude_update");
     }
 
-    public float get_health_percent() {
-        return Mathf.Max(0, health / max_health);
-    }
-    public float get_breath_percent() {
-        return Mathf.Max(0, breath / max_breath);
-    }
-
     public void modify_health(float d) {
         health = Mathf.Clamp(health + d, 0, max_health);
         if(d <= -5) {
@@ -229,6 +222,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
+        UIController.instance.update_hp_bp(health, max_health, breath, max_breath);
         accumulate_update();
         if (Global.pause) {
             return;
@@ -252,6 +246,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator extrude_update() {
         RaycastHit2D[] raycastHits = new RaycastHit2D[16];
         ContactFilter2D contactFilter = new ContactFilter2D();
+        contactFilter.SetLayerMask(~LayerMask.GetMask("Fruit"));
         while (true) {
             yield return new WaitForSeconds(1);
             if (Global.pause)
